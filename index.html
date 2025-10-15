@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Basic Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section className="hero-section">
+    <div className="hero-container">
+      <div className="hero-logo">
+        <img 
+          src="./assets/logo.png"
+          alt="Digital Academy Logo" 
+          className="hero-image"
+        />
+      </div>
+      
+      <p className="hero-text" dir="rtl">
+        منصة تعليمية تدريبية تسعى إلى تلبية احتياجات المجتمع بشكل عام والقطاع الخاص من خريجين متخصصين ومبتكرين، كما وتفسح المجال أمام الطالب الفلسطيني والعربي أينما كان، للالتحاق بها ونيله شهادة تضمن له دخول سوق العمل مباشرة. بمصادقة وزارة العمل الفلسطينية.
+      </p>
+    </div>
+  </section>
+    <section class="gradsec" dir="rtl">
+    <style>
+      :root {
+        --background: #122749;
+        --foreground: #d9d9e8;
+        --card: #3e4b6f;
+        --primary: #ffdb3d;
+        --muted-foreground: #9ca3af;
+        --radius: 12px;
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .gradsec {
+        padding: 64px 16px;
+        background: var(--background);
+        color: var(--foreground);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .gradsec__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        gap: 32px;
+      }
+
+      @media (min-width: 768px) {
+        .gradsec__container {
+          grid-template-columns: repeat(2, 1fr);
+          align-items: center;
+        }
+      }
+
+      .gradsec__image-wrapper {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius);
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+      }
+
+      .gradsec__image {
+        width: 100%;
+        height: 24rem;
+        object-fit: cover;
+        transition: opacity 0.6s ease;
+      }
+
+      .gradsec__fade {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(18, 39, 73, 0.8), transparent);
+      }
+
+      .gradsec__controls {
+        position: absolute;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 6px;
+      }
+
+      .gradsec__dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.4);
+        transition: var(--transition-smooth);
+        border: none;
+        cursor: pointer;
+      }
+
+      .gradsec__dot.active {
+        width: 32px;
+        background: var(--primary);
+      }
+
+      .gradsec__btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(18, 39, 73, 0.6);
+        border: none;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+      }
+
+      .gradsec__btn:hover {
+        background: rgba(18, 39, 73, 0.8);
+      }
+
+      .gradsec__btn.left {
+        left: 8px;
+      }
+
+      .gradsec__btn.right {
+        right: 8px;
+      }
+
+      .gradsec__text {
+        text-align: right;
+        animation: slideRight 1s ease;
+      }
+
+      .gradsec__title {
+        color: var(--primary);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      .gradsec__desc {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        color: var(--muted-foreground);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    </style>
+
+    <div class="gradsec__container">
+      <div class="gradsec__image-wrapper" dir="ltr">
+        <img
+          id="gradsec-image"
+          src="https://via.placeholder.com/800x400?text=Graduation+1"
+          alt="Graduation 1"
+          class="gradsec__image"
+        />
+        <div class="gradsec__fade"></div>
+
+        <div class="gradsec__controls" id="gradsec-dots"></div>
+
+        <button class="gradsec__btn left" id="gradsec-prev" aria-label="Previous">&#10094;</button>
+        <button class="gradsec__btn right" id="gradsec-next" aria-label="Next">&#10095;</button>
+      </div>
+
+      <div class="gradsec__text">
+        <h2 class="gradsec__title">التخرج السابق للأكاديمية</h2>
+        <p class="gradsec__desc">
+          أكمل الطلاب دورة مكثفة حول الذكاء الاصطناعي وكيفية استخدامه في مجال العمل.
+          صور من حفل التخرج بحضور : وزيرة التنمية: د. سماح حمد , و وزيرة العمل:
+          د. إيناس العطاري , و وزير التربية والتعليم السابق: د. صبري صيدم.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const images = [
+          "./assets/graduation1.jpg",
+          "./assets/graduation2.jpg",
+          "./assets/graduation3.jpg",
+          "./assets/graduation4.jpg",
+          "./assets/graduation5.jpg",
+          "./assets/graduation6.jpg",
+          "./assets/graduation7.jpg",
+          "./assets/graduation8.jpg",
+        ];
+
+        let current = 0;
+        const imgEl = document.getElementById("gradsec-image");
+        const dotsContainer = document.getElementById("gradsec-dots");
+        const nextBtn = document.getElementById("gradsec-next");
+        const prevBtn = document.getElementById("gradsec-prev");
+
+        // Create dots
+        images.forEach((_, i) => {
+          const dot = document.createElement("button");
+          dot.classList.add("gradsec__dot");
+          if (i === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => showImage(i));
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsContainer.children);
+
+        function showImage(index) {
+          current = index;
+          imgEl.style.opacity = 0;
+          setTimeout(() => {
+            imgEl.src = images[current];
+            imgEl.alt = "Graduation " + (current + 1);
+            imgEl.style.opacity = 1;
+          }, 300);
+          dots.forEach((d, i) => d.classList.toggle("active", i === current));
+        }
+
+        nextBtn.addEventListener("click", () => {
+          showImage((current + 1) % images.length);
+        });
+
+        prevBtn.addEventListener("click", () => {
+          showImage((current - 1 + images.length) % images.length);
+        });
+
+        // Auto play
+        setInterval(() => {
+          showImage((current + 1) % images.length);
+        }, 4000);
+      })();
+    </script>
+  </section>
+  <!-- WordPress Custom HTML block: Projects Section -->
+<section class="projects" dir="rtl" aria-label="Projects Section">
+  <style>
+    /* ===== Theme tokens (scoped) ===== */
+    .projects {
+      --background: #122749;
+      --foreground: #d9d9e8;
+      --card: #3e4b6f;
+      --card-foreground: #d9d9e8;
+      --primary: #ffdb3d;
+      --secondary: #243f6b; /* matches your TSX inline btn color */
+      --muted-foreground: #9ca3af;
+      --border: #495983;
+      --radius: 12px;
+    }
+
+    /* ===== Layout ===== */
+    .projects {
+      padding: 64px 16px;
+      background: var(--background);
+      color: var(--foreground);
+      animation: proj-fade-in 0.8s ease;
+    }
+    .projects__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 32px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .projects__container { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===== Left: Text/Card ===== */
+    .projects__title {
+      color: var(--primary);
+      font-size: clamp(26px, 3.5vw, 38px);
+      font-weight: 800;
+      margin: 0 0 24px 0;
+      text-align: right;
+    }
+    .card {
+      background: var(--card);
+      color: var(--card-foreground);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: background 0.2s ease;
+    }
+    .card:hover { background: #435277; } /* slight hover */
+    .card__title {
+      margin: 0 0 8px 0;
+      font-size: clamp(20px, 2.5vw, 28px);
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .card__desc {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--muted-foreground);
+    }
+    .card__author {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    .actions { display: flex; gap: 8px; padding-top: 16px; }
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--secondary);
+      background: var(--secondary);
+      color: #fff;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+    }
+    .btn-icon:hover { filter: brightness(0.95); }
+    .btn-icon svg { width: 20px; height: 20px; }
+
+    /* ===== Right: Poster/Carousel ===== */
+    .poster {
+      position: relative;
+      overflow: hidden;
+    }
+    .poster__img {
+      width: 100%;
+      height: 500px;
+      object-fit: contain;
+      transition: opacity 0.4s ease;
+      display: block;
+      background: rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+    .poster__dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: width 0.2s ease, background 0.2s ease;
+    }
+    .dot.active { width: 32px; background: var(--primary); }
+
+    /* LTR for controls/image only */
+    .ltr { direction: ltr; }
+
+    /* ===== Animations ===== */
+    @keyframes proj-fade-in {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .slide-in {
+      animation: proj-slide-in 0.6s ease;
+    }
+    @keyframes proj-slide-in {
+      from { opacity: 0; transform: translateX(24px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+  </style>
+
+  <div class="projects__container">
+    <!-- LEFT (RTL) -->
+    <div>
+      <h2 class="projects__title">مشاريع الخريجين</h2>
+
+      <article class="card slide-in" id="proj-card">
+        <h3 class="card__title" id="proj-title">—</h3>
+        <p class="card__desc" id="proj-desc">—</p>
+        <p class="card__author" id="proj-author">—</p>
+
+        <div class="actions">
+          <!-- Prev (shows right-chevron because RTL) -->
+          <button type="button" class="btn-icon" id="proj-prev" aria-label="السابق">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="10 6 16 12 10 18"></polyline>
+            </svg>
+          </button>
+          <!-- Next (shows left-chevron because RTL) -->
+          <button type="button" class="btn-icon" id="proj-next" aria-label="التالي">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="14 6 8 12 14 18"></polyline>
+            </svg>
+          </button>
+        </div>
+      </article>
+    </div>
+
+    <!-- RIGHT (LTR for media & dots) -->
+    <div class="poster ltr">
+      <img id="proj-image" class="poster__img" src="" alt="" />
+      <div class="poster__dots" id="proj-dots"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // Data from your TSX (use full WordPress media URLs in production)
+      var projects = [
+        { title: "EcoSmart Assistant", description: "مساعدك الذكي للاستدامة", author: "حسن عتيلي", image: "./assets/posters/ecosmart.png" },
+        { title: "Hydrogen Fuel Cell Vehicles", description: "الجدوى من تكنولوجيا الهيدروجين كمصدر للطاقة النظيفة", author: "فرح  سوداح", image: "/assets/posters/hydrogen.jpg" },
+        { title: "أكاديمية عبقرينو", description: "استخدام الواقع المعزز للتعلم المبتكر", author: "م. شهد اسليم", image: "/assets/posters/abqareno.jpg" },
+        { title: "green AI", description: "نظام مستدام وصديق للبيئة يقلل الأثر البيئي ويعزز كفاءة الطاقة.", author: "عبدالله ملاح", image: "/assets/posters/green_AI.jpg" },
+        { title: "Model Context Protocol", description: "دراسة كيفية تطبيق MCP X  و تأثيره على التكنلوجيا الناشئة", author: "علاء عيسى", image: "/assets/posters/mcp.jpg" },
+        { title: "Schobot", description: "مساعد بحث قائم على الذكاء الاصطناعي", author: "د. خلود عبدو", image: "/assets/posters/schobot.jpg" }
+      ];
+
+      var i = 0;
+      var imgEl = document.getElementById("proj-image");
+      var titleEl = document.getElementById("proj-title");
+      var descEl = document.getElementById("proj-desc");
+      var authorEl = document.getElementById("proj-author");
+      var dotsWrap = document.getElementById("proj-dots");
+      var nextBtn = document.getElementById("proj-next");
+      var prevBtn = document.getElementById("proj-prev");
+      var cardEl = document.getElementById("proj-card");
+
+      function render(index) {
+        var item = projects[index];
+        // fade image
+        imgEl.style.opacity = 0;
+        setTimeout(function () {
+          imgEl.src = item.image;
+          imgEl.alt = item.title;
+          imgEl.style.opacity = 1;
+        }, 200);
+
+        titleEl.textContent = item.title;
+        descEl.textContent = item.description;
+        authorEl.textContent = item.author;
+
+        Array.prototype.forEach.call(dotsWrap.children, function (d, di) {
+          d.classList.toggle("active", di === index);
+        });
+
+        // retrigger slide-in for card
+        cardEl.classList.remove("slide-in");
+        void cardEl.offsetWidth; // reflow
+        cardEl.classList.add("slide-in");
+      }
+
+      // build dots once
+      projects.forEach(function (_, idx) {
+        var b = document.createElement("button");
+        b.className = "dot" + (idx === 0 ? " active" : "");
+        b.type = "button";
+        b.addEventListener("click", function () {
+          i = idx; render(i);
+        });
+        dotsWrap.appendChild(b);
+      });
+
+      nextBtn.addEventListener("click", function () {
+        i = (i + 1) % projects.length; render(i);
+      });
+      prevBtn.addEventListener("click", function () {
+        i = (i - 1 + projects.length) % projects.length; render(i);
+      });
+
+      // initial
+      render(i);
+    })();
+  </script>
+</section>
+<!-- WordPress Custom HTML block: Payment Section (with Copy actions) -->
+<section class="payment" dir="rtl" aria-label="Payment Methods">
+  <style>
+    .payment{
+      --background:#122749;--foreground:#d9d9e8;--card:#3E4B6F;--card-foreground:#d9d9e8;
+      --primary:#ffdb3d;--primary-foreground:#122749;--border:#495983;
+      --muted-foreground:#d9d9e8cc;--radius:12px;--easing:cubic-bezier(.4,0,.2,1)
+    }
+    .payment{padding:64px 16px;background:var(--background);color:var(--foreground);animation:fadeIn .8s var(--easing)}
+    .payment__container{max-width:1000px;margin:0 auto}
+    .payment__title{margin:0 0 24px 0;color:var(--primary);font-size:clamp(26px,3.5vw,38px);font-weight:800;text-align:right}
+
+    .tabs{display:flex;flex-direction:column;gap:16px}
+    .tablist{display:flex;justify-content:flex-end;gap:8px;margin:0 0 8px 0}
+    .tab{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid var(--border);
+      background:transparent;color:var(--foreground);cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15);transition:background .2s var(--easing),color .2s var(--easing),border-color .2s var(--easing),transform .1s var(--easing)}
+    .tab:active{transform:translateY(1px)}
+    .tab.is-active{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}
+    .tab svg{width:20px;height:20px}
+    .tabpanel{display:none;margin:0}
+    .tabpanel.is-active{display:block}
+
+    .card{background:var(--card);color:var(--card-foreground);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:right}
+
+    .branch-grid{display:grid;gap:12px}
+    .branch{background:color-mix(in srgb, var(--background) 20%, transparent);border-radius:10px;padding:16px}
+    .branch p{margin:0 0 8px 0}
+    .branch p:last-child{margin:0}
+    .muted{color:var(--muted-foreground)}
+    .link{color:var(--primary);text-decoration:underline}
+    .link:hover{opacity:.85}
+
+    /* Copy button */
+    .copyline{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .copybtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:none;color:var(--primary-foreground);
+      padding:6px 10px;border-radius:8px;cursor:pointer;transition:background .2s var(--easing), color .2s var(--easing)}
+    .copybtn:hover{background:var(--primary);color:#000}
+    .copybtn__icon{width:16px;height:16px;display:inline-block} /* drop your icon here */
+    .copystate{font-size:.85rem;opacity:0;transform:translateY(-2px);transition:opacity .2s var(--easing), transform .2s var(--easing)}
+    .copystate.show{opacity:1;transform:translateY(0);color:var(--primary)}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  </style>
+
+  <div class="payment__container">
+    <h2 class="payment__title">طريقة الدفع</h2>
+
+    <div class="tabs" id="pay-tabs">
+      <div class="tablist" role="tablist" aria-label="Payment method tabs">
+        <button type="button" class="tab is-active" role="tab" id="tab-branch" aria-controls="panel-branch" aria-selected="true" data-target="panel-branch">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 22s8-4.5 8-10a8 8 0 1 0-16 0c0 5.5 8 10 8 10Z"></path><circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          الدفع في الفروع
+        </button>
+        <button type="button" class="tab" role="tab" id="tab-bank" aria-controls="panel-bank" aria-selected="false" data-target="panel-bank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M3 21h18"></path><path d="M5 21V9l7-4 7 4v12"></path><path d="M9 21V12h6v9"></path>
+          </svg>
+          التحويل البنكي
+        </button>
+      </div>
+
+      <div class="card">
+        <!-- Branches -->
+        <div class="tabpanel is-active" role="tabpanel" id="panel-branch" aria-labelledby="tab-branch">
+          <div class="branch-grid">
+            <div class="branch">
+              <p><strong>القدس</strong></p>
+              <p class="muted">علي بن أبي طالب 9 – الطابق الأول</p>
+              <p class="muted">الأحد – الخميس<br>٨:٠٠ - ١٤:٣٠</p>
+              <a class="link" href="https://maps.app.goo.gl/dD566j6noW7fGRPk9?g_st=iw" target="_blank" rel="noopener noreferrer">عرض الموقع</a>
+            </div>
+            <div class="branch">
+              <p><strong>رام الله</strong></p>
+              <p class="muted">عين مصباح – مركز العلوم و التكنولوجيا</p>
+              <p class="muted">السبت – الخميس، ما عدا الاثنين<br>٩:٠٠ – ١٧:٠٠</p>
+              <a class="link" href="https://maps.app.goo.gl/nuL55m5EULRJJmHW7?g_st=iw" target="_blank" rel="noopener noreferrer">عرض الموقع</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bank -->
+        <div class="tabpanel" role="tabpanel" id="panel-bank" aria-labelledby="tab-bank">
+          <div class="branch">
+            <p class="muted"><strong>اسم البنك:</strong> Bank Of Palestine</p>
+
+            <p class="muted copyline">
+              <strong>IBAN:</strong>
+              <span id="iban-text">PS37 PALS 0462 0237 8880 0130 0000 8</span>
+              <button class="copybtn" type="button" data-copy-target="#iban-text" aria-label="نسخ IBAN">
+                <span class="copybtn__icon"></span><span>نسخ</span>
+              </button>
+              <span class="copystate" aria-live="polite" id="iban-state" role="status"></span>
+            </p>
+
+            <p class="muted copyline">
+              <strong>SWIFT Code:</strong>
+              <span id="swift-text">PALSPS22</span>
+              <button class="copybtn" type="button" data-copy-target="#swift-text" aria-label="نسخ SWIFT">
+                <span class="copybtn__icon"></span><span>نسخ</span>
+              </button>
+              <span class="copystate" aria-live="polite" id="swift-state" role="status"></span>
+            </p>
+
+            <p class="muted"><strong>Branch:</strong> Al-Ersal Branch 462</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      var root = document.getElementById('pay-tabs');
+      if(!root) return;
+      var tabs = root.querySelectorAll('.tab');
+      var panels = root.querySelectorAll('.tabpanel');
+
+      function activate(id){
+        tabs.forEach(function(t){
+          var active = t.dataset.target === id;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+          var p = document.getElementById(t.dataset.target);
+          if(p){ p.classList.toggle('is-active', active); }
+        });
+      }
+
+      tabs.forEach(function(t){
+        t.addEventListener('click', function(){ activate(t.dataset.target); });
+        t.addEventListener('keydown', function(e){
+          var idx = Array.prototype.indexOf.call(tabs, t);
+          if(e.key === 'ArrowLeft' || e.key === 'ArrowRight'){
+            e.preventDefault();
+            var dir = e.key === 'ArrowLeft' ? -1 : 1;
+            var next = tabs[(idx + dir + tabs.length) % tabs.length]; next.focus();
+          }
+          if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activate(t.dataset.target); }
+        });
+      });
+      activate('panel-branch'); // default
+
+      // Copy to clipboard
+      function copyText(selector){
+        var el = root.querySelector(selector);
+        return new Promise(function(resolve, reject){
+          var text = (el && ('innerText' in el)) ? el.innerText.trim() : '';
+          if(!text){ return reject(new Error('empty')); }
+          if(navigator.clipboard && navigator.clipboard.writeText){
+            navigator.clipboard.writeText(text).then(resolve, reject);
+          } else {
+            // fallback
+            var ta = document.createElement('textarea');
+            ta.value = text; document.body.appendChild(ta);
+            ta.select(); try{ document.execCommand('copy'); resolve(); } catch(e){ reject(e); }
+            document.body.removeChild(ta);
+          }
+        });
+      }
+
+      function flashState(stateEl, ok){
+        if(!stateEl) return;
+        stateEl.textContent = ok ? 'تم النسخ!' : 'تعذّر النسخ';
+        stateEl.classList.add('show');
+        setTimeout(function(){ stateEl.classList.remove('show'); stateEl.textContent=''; }, 1500);
+      }
+
+      root.querySelectorAll('.copybtn').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          var sel = btn.getAttribute('data-copy-target');
+          var stateId = btn.closest('.copyline').querySelector('.copystate');
+          copyText(sel).then(function(){ flashState(stateId, true); })
+                       .catch(function(){ flashState(stateId, false); });
+        });
+      });
+    })();
+  </script>
+</section>
+<!-- WordPress Custom HTML block: Contact Section -->
+<section class="contact" dir="rtl" aria-label="Contact">
+  <style>
+    /* Scoped tokens (use your global :root if already present) */
+    .contact{
+      --background:#122749;
+      --foreground:#d9d9e8;
+      --card:#3E4B6F;
+      --card-foreground:#d9d9e8;
+      --primary:#ffdb3d;
+      --primary-foreground:#122749;
+      --muted-foreground:#9ca3af;
+      --border:#495983;
+      --radius:12px;
+      --easing:cubic-bezier(.4,0,.2,1);
+    }
+
+    .contact{padding:64px 16px;background:var(--background);color:var(--foreground);animation:fadeIn .8s var(--easing)}
+    .contact__container{max-width:64rem;margin:0 auto}
+
+    .contact__title{
+      margin:0 0 24px 0;
+      color:var(--primary);
+      font-size:clamp(26px,3.5vw,38px);
+      font-weight:800;
+      text-align:right;
+    }
+
+    .contact__grid{display:grid;gap:24px}
+    @media (min-width:768px){ .contact__grid{grid-template-columns:1fr 1fr} }
+
+    .card{
+      background:var(--card);
+      color:var(--card-foreground);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:24px;
+      transition:background .2s var(--easing);
+    }
+    /* hover: bg-card/80 approximation */
+    .card:hover{background:#435277}
+
+    .row{display:flex;align-items:center;gap:16px}
+    .iconwrap{
+      padding:12px;border-radius:10px;background:var(--primary);color:var(--primary-foreground);
+      display:inline-flex;align-items:center;justify-content:center
+    }
+    .icon{width:24px;height:24px}
+
+    .h3{margin:0 0 6px 0;font-weight:700;font-size:18px}
+    .link{color:var(--muted-foreground);text-decoration:none;transition:color .2s var(--easing)}
+    .link:hover{color:var(--primary)}
+
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  </style>
+
+  <div class="contact__container">
+    <h2 class="contact__title">تواصل معنا</h2>
+
+    <div class="contact__grid">
+      <!-- Email card -->
+      <div class="card">
+        <div class="row">
+          <div class="iconwrap" aria-hidden="true">
+            <!-- Mail icon -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16v16H4z"></path>
+              <path d="m22 6-10 7L2 6"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="h3">البريد الإلكتروني</h3>
+            <a href="mailto:DASI@alnayzak.org" class="link">DASI@alnayzak.org</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phone card -->
+      <div class="card">
+        <div class="row">
+          <div class="iconwrap" aria-hidden="true">
+            <!-- Phone icon -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3A2 2 0 0 1 9 3.72a12.66 12.66 0 0 0 .7 2.11 2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.66 12.66 0 0 0 2.11.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="h3">الهاتف</h3>
+            <a href="tel:00972597920995" class="link" dir="ltr">00972597920995</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
