@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DASI — الصفحة</title>
-  <!-- Global resets kept tiny; colors are NOT in :root -->
-  <style>
+
+<style>
     * { box-sizing: border-box; }
     html, body { margin:0; padding:0; }
     body {
@@ -46,7 +46,7 @@
     </div>
   </section>
 
-  <!-- GRADUATION (carousel) -->
+  <!-- GRADUATION -->
   <section class="section gradsec" aria-label="التخرج السابق للأكاديمية">
     <style>
       .gradsec { background:#122749; color:#d9d9e8; animation:gs-fade .8s ease; }
@@ -272,15 +272,13 @@
       })();
     </script>
   </section>
-  <!-- WordPress Custom HTML block: Courses Section (no :root, inline colors) -->
+  <!-- COURSES-->
 <section class="courses" dir="rtl" aria-label="Courses">
   <style>
-    /* ===== Layout / theme (literal colors) ===== */
     .courses{padding:64px 16px;background:#122749;color:#d9d9e8;animation:fadeIn .8s cubic-bezier(.4,0,.2,1)}
     .courses__container{max-width:1000px;margin:0 auto}
     .courses__title{margin:0 0 24px 0;color:#ffdb3d;font-size:clamp(26px,3.5vw,38px);font-weight:800;text-align:right}
 
-    /* ===== Card ===== */
     .card{
       background:#3E4B6F; color:#d9d9e8;
       border:1px solid #495983; border-radius:12px;
@@ -288,7 +286,6 @@
     }
     .card:hover{background:#435277}
 
-    /* Header image full-width of the card */
     .card__hero{position:relative;overflow:hidden}
     .card__img{display:block;width:100%;height:256px;object-fit:cover}
     .card__overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(18,39,73,.95) 0%, rgba(18,39,73,.5) 50%, rgba(18,39,73,0) 100%)}
@@ -298,7 +295,6 @@
     .card__body{padding:24px}
     .card__summary{margin:0 0 16px 0;color:#9ca3af;line-height:1.7}
 
-    /* Toggle button */
     .toggle{
       width:100%; display:inline-flex; align-items:center; justify-content:center; gap:8px;
       padding:10px 12px; border-radius:10px; border:none;
@@ -312,11 +308,9 @@
     .chev{width:16px;height:16px;transition:transform .25s cubic-bezier(.4,0,.2,1);stroke:currentColor}
     .toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
 
-    /* Accordion content */
     .accordion{overflow:hidden;max-height:0;opacity:0;transform:translateY(-4px);transition:max-height .4s cubic-bezier(.4,0,.2,1), opacity .3s cubic-bezier(.4,0,.2,1), transform .3s cubic-bezier(.4,0,.2,1)}
     .accordion.open{max-height:2000px;opacity:1;transform:translateY(0)}
 
-    /* Info blocks */
     .info{background:#243f6b;border-radius:10px;padding:16px;margin-top:16px}
     .info h4{margin:0 0 12px 0;font-weight:800;font-size:18px;color:#d9d9e8}
     .info p,.info li{color:#9ca3af;line-height:1.8}
@@ -331,7 +325,6 @@
     <h2 class="courses__title">دوراتنا</h2>
 
     <article class="card" id="course-card">
-      <!-- Hero image spans full card width -->
       <div class="card__hero">
         <img class="card__img" id="course-img"
              src="./assets/courseBanner.png"
